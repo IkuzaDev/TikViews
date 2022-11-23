@@ -312,12 +312,13 @@ def main():
                 pass
 
     else:
-        print(bcolors.FAIL + "Failed to solve captcha.")
+        print("Failed to solve captcha.")
 
 
 if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print(bcolors.FAIL + "Exit")
+        os.system("clear")
+        print("Exit")
         exit()
