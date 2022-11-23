@@ -152,9 +152,11 @@ def main():
                                spinner.start()
                                time.sleep(3) 
                                spinner.stop()
+                               
                                for i in range(int(inject_views['message']), 0, -1):
-                                   print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown: " + str(i) + " seconds", end="\r")
-                               time.sleep(1)
+                                    print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown: " + str(
+                                        i) + " seconds", end="\r")
+                                    time.sleep(1)
                         else:
                             pass
 
