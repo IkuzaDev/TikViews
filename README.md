@@ -47,6 +47,12 @@ Install rich module
   pip3 install rich
 ```
 
+Install halo module
+
+```bash
+  pip3 install halo
+```
+
 Start the bot
 
 ```bash
