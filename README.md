@@ -41,6 +41,12 @@ Install dependencies
   pip3 install -r requirements.txt
 ```
 
+Install rich module
+
+```bash
+  pip3 install rich
+```
+
 Start the bot
 
 ```bash
