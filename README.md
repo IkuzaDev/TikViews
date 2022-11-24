@@ -96,3 +96,4 @@ Run the bot
 
 ## Special Credit
 
+[sandrocods](https://github.com/sandrocods)
