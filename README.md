@@ -79,16 +79,20 @@ Run the bot
   python3 main.py
 ```
 
-#Picture
+## Picture
 
 <p align="center"> 
-<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+<img src="https://github.com/IkuzaDev/TikViews/raw/main/pic/1.png"></img>
 </p>
 
-<p align="left"> 
-<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+<p align="center"> 
+<img src="https://github.com/IkuzaDev/TikViews/raw/main/pic/2.png"></img>
 </p>
 
-<p align="right"> 
-<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+<p align="center"> 
+<img src="https://github.com/IkuzaDev/TikViews/raw/main/pic/3.png"></img>
 </p>
+
+
+## Special Credit
+
