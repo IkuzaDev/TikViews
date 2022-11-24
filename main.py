@@ -353,6 +353,11 @@ def main():
                                     time.sleep(1)                                  
                         else:
                             pass
+                elif answers['type'] == 'Comments Hearts':
+                            spinner.start()
+                            time.sleep(2)
+                            spinner.stop()
+                            print("under maintenance")
 
             except Exception as e:
                 pass
@@ -368,3 +373,4 @@ if __name__ == '__main__':
         os.system("clear")
         print("Exit")
         exit()
+
