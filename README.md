@@ -78,3 +78,17 @@ Run the bot
 ```bash
   python3 main.py
 ```
+
+#Picture
+
+<p align="center"> 
+<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+</p>
+
+<p align="left"> 
+<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+</p>
+
+<p align="right"> 
+<img src="https://cdn.discordapp.com/attachments/979095432682676264/996481048605106186/unknown.png"></img>
+</p>
