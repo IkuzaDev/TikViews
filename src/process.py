@@ -25,6 +25,7 @@ class ZefoyViews:
         "Views": "c2VuZC9mb2xsb3dlcnNfdGlrdG9V",
         "Shares": "c2VuZC9mb2xsb3dlcnNfdGlrdG9s",
         "Favorites": "c2VuZF9mb2xsb3dlcnNfdGlrdG9L",
+        "Followers" : "c2VuZF9mb2xsb3dlcnNfdGlrdG9r",
         "Hearts": "c2VuZE9nb2xsb3dlcnNfdGlrdG9r"
     }
 
