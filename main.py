@@ -307,53 +307,7 @@ def main():
                                     time.sleep(1)                                  
                         else:
                             pass
-                        elif answers['type'] == 'Comments Hearts':
-
-                    while True:
-                        inject_CH = inject.send_multi_services(url_video=url_video, services=answers['type'], )
-
-                        if inject_CH:                          
-
-                            if inject_CH['message'] == "Please try again later":
-                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_CH[
-                                    'message'])
-                                exit()
-
-                            elif inject_CH['message'] == 'Another State':
-                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Current Comment : " +
-                                      inject_CH['data'], end="\r")
-                                      
-
-                            elif inject_CH['message'] == "Hearts successfully sent.":
-                               spinner.start()
-                               time.sleep(3)
-                               spinner.stop()
-                               print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
-                               print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_CH['message'])
-                                                              
-                               print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Current Hearts: " + inject_CH['data'], end="\n\n")
-                               print()
-
-                            elif inject_CH['message'] == "Session Expired. Please Re Login!":
-                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_CH[
-                                    'message'])
-                                exit()
-
-                            elif inject_CH['message'] == "Video not found.":
-                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_CH[
-                                    'message'])
-                                exit()
-
-                            else:                           
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
-                               for i in range(int(inject_CH['message']), 0, -1):
-                                    print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown " + str(i) + " seconds.", end="\r")
-                                    time.sleep(1)                                  
-                        else:
-                            pass
-                        elif answers['type'] == 'Followers':
+                elif answers['type'] == 'Followers':
 
                     while True:
                         inject_follow = inject.send_multi_services(url_video=url_video, services=answers['type'], )
