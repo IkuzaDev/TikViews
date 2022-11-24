@@ -5,7 +5,7 @@ import urllib.parse
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
-#
+# source : https://github.com/sandrocods/Zefoy-Automation
 # for debug
 # from requests_toolbelt.utils import dump
 
