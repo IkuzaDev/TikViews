@@ -11,14 +11,15 @@ Soon Updated Feature :
 
 ## Feature
 
-| Name                                        | Status         |
+| Name                                        |     Status      |
 |---------------------------------------------|-----------------|
 | Auto Bypass Captcha                         | ✅              |
 | No Selenium / puppeteer                     | ✅              |
 | Add New Services Shares , Hearts & Favorite | ✅              |
+| Add New Services  Followers                 | ✅              |
 | Detect status of services                   | ✅              |
 | Google Ads bypassed                         | ✅              |
-| Followers and Comments hearts               | Coming Soon 🚀  |
+| Comments hearts                             | Coming Soon 🚀  |
 
 
 ## Run Locally
