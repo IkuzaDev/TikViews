@@ -24,6 +24,7 @@ class ZefoyViews:
     STATIC_ENDPOINT = {
         "Views": "c2VuZC9mb2xsb3dlcnNfdGlrdG9V",
         "Shares": "c2VuZC9mb2xsb3dlcnNfdGlrdG9s",
+        "Followers" : "c2VuZF9mb2xsb3dlcnNfdGlrdG9r",
         "Favorites": "c2VuZF9mb2xsb3dlcnNfdGlrdG9L",
         "Hearts": "c2VuZE9nb2xsb3dlcnNfdGlrdG9r"
     }
