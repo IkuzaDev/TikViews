@@ -16,7 +16,7 @@ Soon Updated Feature :
 | Auto Bypass Captcha                         | ✅              |
 | No Selenium / puppeteer                     | ✅              |
 | Add New Services Shares , Hearts & Favorite | ✅              |
-| Add New Services  Followers                 | ✅              |
+| Remove Followers Service                    | ✅              |
 | Detect status of services                   | ✅              |
 | Google Ads bypassed                         | ✅              |
 | Comments hearts                             | Coming Soon 🚀  |
