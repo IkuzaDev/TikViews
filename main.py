@@ -89,11 +89,11 @@ def main():
         table.add_column("info", justify="center", style="green")
 
         status_services = inject.get_status_services()
-        if status_services is None: print("Failed to get status services, try again later"); exit()
+        if not status_services: print("Failed to get status services, try again later"); exit()
 
         valid_services = []
         for service in status_services:
-           if service['name'] == 'Followers' or service['name'] == 'Comments Hearts':
+            if service['name'] == 'False'
                 continue
             elif 'ago updated' in service['status']:
                 valid_services.append(service['name'])
