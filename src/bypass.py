@@ -20,10 +20,7 @@ class Main:
     time.sleep(self.time)                                                                                  
                                                                                   
 if __name__ == "__main__":
-  #  ---------- EDIT ----------
-  email = 'warga.autis@gmail.com' # replace email
-  password = 'Sayank@16' # replace password
-  #  ---------- EDIT ----------                                                                                                                                                         
+  #  ---------- EDIT ----------                                                                                                                                                      
  
   driver = Main()
   driver.login(email, password) 
