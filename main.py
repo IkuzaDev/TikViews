@@ -93,7 +93,7 @@ def main():
 
         valid_services = []
         for service in status_services:
-            if service['name'] == 'Followers' or service['name'] == 'Comments Hearts':
+            if service['name'] == ' ' or service['name'] == ' ':
                 continue
             elif 'ago updated' in service['status']:
                 valid_services.append(service['name'])
