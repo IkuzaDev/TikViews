@@ -16,7 +16,7 @@ from rich.text import Text
 from rich.panel import Panel
 from halo import Halo
 from colorama import init, Fore
-spinner = Halo(text='Loading', spinner='dots')
+#spinner = Halo(text='Loading', #spinner='dots')
 
 
 layout = Layout()
@@ -40,7 +40,7 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 def main():
-    os.system("clear")
+    os.system("cls")
     init(autoreset=True)
     inject = process.ZefoyViews()
     inject.get_session_captcha()
@@ -82,7 +82,7 @@ def main():
     if inject.post_solve_captcha(captcha_result=inject.captcha_solver()): 
 
         print("\n[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Success Solve Captcha" + "\n")
-        os.system("clear")
+        os.system("cls")
         table = Table(title="")
         table.add_column("Date", justify="center", style="cyan", no_wrap=True)
         table.add_column("Service", justify="center", style="magenta")
@@ -104,8 +104,7 @@ def main():
         console = Console()
         console.print(table)
 
-        questions = [
-            inquirer.List('type', message="What services do you need?", choices=valid_services, carousel=True, ), ]
+        questions = [inquirer.List('type', message="What services do you need?", choices=valid_services, carousel=True, ), ]
         answers = inquirer.prompt(questions)
 
         while True:
@@ -130,9 +129,9 @@ def main():
 
 
                             elif inject_views['message'] == "Successfully views sent.":
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_views['message'])
                                                               
@@ -149,9 +148,9 @@ def main():
                                 exit()
 
                             else:
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                
                                for i in range(int(inject_views['message']), 0, -1):
                                     print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown: " + str(
@@ -179,9 +178,9 @@ def main():
 
 
                             elif inject_shares['message'] == "Shares successfully sent.":
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_shares['message'])
                                                               
@@ -197,9 +196,9 @@ def main():
                                 exit()
 
                             else:
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                for i in range(int(inject_shares['message']), 0, -1):
                                     print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown: " + str(
                                         i) + " seconds", end="\r")
@@ -228,9 +227,9 @@ def main():
 
 
                             elif inject_favorites['message'] == "Favorites successfully sent.":
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_favorites['message'])
                                                               
@@ -248,9 +247,9 @@ def main():
 
 
                             else:
-                              spinner.start()
-                              time.sleep(3)
-                              spinner.stop()
+                              #spinner.start()
+                              #time.sleep(3)
+                              #spinner.stop()
                               for i in range(int(inject_favorites['message']), 0, -1):
                                     print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown: " + str(
                                         i) + " seconds.", end="\r")
@@ -279,9 +278,9 @@ def main():
                                       
 
                             elif inject_hearts['message'] == "Hearts successfully sent.":
-                               spinner.start()
-                               time.sleep(3)
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3)
+                               #spinner.stop()
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_hearts['message'])
                                                               
@@ -299,9 +298,9 @@ def main():
                                 exit()
 
                             else:                           
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                for i in range(int(inject_hearts['message']), 0, -1):
                                     print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown " + str(i) + " seconds.", end="\r")
                                     time.sleep(1)                                  
@@ -325,9 +324,9 @@ def main():
                                       
 
                             elif inject_follow['message'] == "Hearts successfully sent.":
-                               spinner.start()
-                               time.sleep(3)
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3)
+                               #spinner.stop()
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + "Status : " + "Success")
                                print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" +  str(date.year)  +" ] " + inject_follow['message'])
                                                               
@@ -345,18 +344,18 @@ def main():
                                 exit()
 
                             else:                           
-                               spinner.start()
-                               time.sleep(3) 
-                               spinner.stop()
+                               #spinner.start()
+                               #time.sleep(3) 
+                               #spinner.stop()
                                for i in range(int(inject_follow['message']), 0, -1):
                                     print("[ " + str(date.strftime("%d")) + ":" + str(date.strftime("%b")) + ":" + str(date.year) + " ]" + " CoolDown " + str(i) + " seconds.", end="\r")
                                     time.sleep(1)                                  
                         else:
                             pass
                 elif answers['type'] == 'Comments Hearts':
-                            spinner.start()
+                            #spinner.start()
                             time.sleep(2)
-                            spinner.stop()
+                            #spinner.stop()
                             print("under maintenance")
 
             except Exception as e:
@@ -370,7 +369,7 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        os.system("clear")
+        os.system("cls")
         print("Exit")
         exit()
 
