@@ -2,6 +2,7 @@ import re
 import base64
 import requests
 import urllib.parse
+import json
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
@@ -11,7 +12,14 @@ from urllib.parse import urlparse
 
 class ZefoyViews:
     API_ZEFOY = 'https://zefoy.com/'
-    API_VISION = 'https://api.sandroputraa.com/zefoy.php'
+    API_VISION = 'https://app.metabypass.tech/CaptchaSolver/api/v1/services/captchaSolver'
+    TOKEN_FILE_PATH='metabypass.token'
+
+    # Your Credentials
+    CLIENT_ID='1374' #****CHANGE HERE WITH YOUR VALUE*******
+    CLIENT_SECRET='NkuXGmViy9gQ3hYXlcVh3aPhbdtv7LXVdO6Egmok' #****CHANGE HERE WITH YOUR VALUE*******
+    EMAIL='dragon.studio.official@gmail.com' #****CHANGE HERE WITH YOUR VALUE*******
+    PASSWORD='084@151396074#3402641=!46' #****CHANGE HERE WITH YOUR VALUE*******
 
     STATIC_HEADERS = {
         "Host": "zefoy.com",
@@ -38,52 +46,65 @@ class ZefoyViews:
             }
         )
 
-        self.session.cookies.set("_gads", request_gfp.text.strip().split('_value_":"')[1].split('","_expires_')[0],
-                                 domain='zefoy.com')
-        self.session.cookies.set("__gpi", request_gfp.text.strip().split('_value_":"')[2].split('","_expires_')[0],
-                                 domain='zefoy.com')
+        self.session.cookies.set("_gads", request_gfp.text.strip().split('_value_":"')[1].split('","_expires_')[0], domain='zefoy.com')
+        self.session.cookies.set("__gpi", request_gfp.text.strip().split('_value_":"')[2].split('","_expires_')[0], domain='zefoy.com')
+    def getNewAccessToken(self):
+        request_url = "https://app.metabypass.tech/CaptchaSolver/oauth/token"
+        payload=json.dumps(
+            {
+            "grant_type":"password" ,
+            "client_id":self.CLIENT_ID,
+            "client_secret":self.CLIENT_SECRET,
+            "username":self.EMAIL,
+            "password":self.PASSWORD
+            }
+        )
+        headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+        
+        response = requests.request("POST", request_url, headers=headers, data=payload)
+        
+        if response.status_code ==200 :
+            response_dict=json.loads(response.text)
+            #store access token at cache file
+            return response_dict['access_token']
+        else:
+            print('unauth!')
+            exit()
 
     def captcha_solver(self):
         try:
+            access_token = self.getNewAccessToken()
             solve_captcha = requests.post(
                 url=self.API_VISION,
                 headers={
                     'Content-Type': 'application/json',
-                    'Auth': 'sandro_putraa',
-                    'Host': 'api.sandroputraa.com',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36',
+                    'Accept': 'application/json',
+                    'Authorization': f'Bearer {access_token}'
                 },
                 json={
-                    "img": base64.b64encode(open('captcha.png', 'rb').read()).decode('utf-8')
+                    "image": base64.b64encode(open('captcha.png', 'rb').read()).decode('utf-8')
                 }
             )
 
-            if "RESOURCE_EXHAUSTED" in solve_captcha.text:
-                exit("API Limit Reached")
+            if solve_captcha.status_code==401:
+                access_token=self.getNewAccessToken()
+                headers = {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': f'Bearer {access_token}'
+                    }
+                response = requests.request("POST", self.API_VISION, headers=headers, json={"image": base64.b64encode(open('captcha.png', 'rb').read()).decode('utf-8')})
 
-            if "PERMISSION_DENIED" in solve_captcha.text:
-                exit("API Limit Reached")
-
-            if not solve_captcha.json()['Data'].isascii():
-                return "reload"
-
-            # is special character in captcha
-            if any(char in solve_captcha.json()['Data'] for char in
-                   ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';',
-                    ':', '"', "'", ',', '<', '.', '>', '/', '?']):
-                return "reload"
-
-            # is number in captcha
-            if any(char.isdigit() for char in solve_captcha.json()['Data']):
-                return "reload"
-
-            if solve_captcha.status_code == 200 and solve_captcha.json()['message'] == 'Success':
-
-                return solve_captcha.json()['Data'].split('\n')[0].strip()
-
-            else:
-                exit("Error: " + solve_captcha.json()['message'])
-
+            if solve_captcha.status_code==200:
+                response_dict=json.loads(response.text)
+                
+                if response_dict['status_code']==200:
+                    return response_dict['data']['result']
+                else:
+                    exit(response_dict['message'])
         except TypeError:
             return "reload"
 
