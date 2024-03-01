@@ -89,8 +89,3 @@ Run the bot
 <p align="center"> 
 <img src="https://github.com/IkuzaDev/TikViews/raw/main/pic/3.png"></img>
 </p>
-
-
-## Special Credit
-
-[sandrocods](https://github.com/sandrocods)
