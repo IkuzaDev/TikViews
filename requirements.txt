@@ -5,3 +5,4 @@ inquirer
 prettytable
 halo
 rich
+cloudscraper
