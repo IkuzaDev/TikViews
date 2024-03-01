@@ -4,9 +4,11 @@ Automation does not require Selenium or any other browser to be interface with Z
 
 ```
 Soon Updated Feature : 
- - Auto bypass new captcha 🚀
- - Auto bypass cloudflare 🚀
+ - Auto bypass UAM cf 🚀
 ```
+
+# Note:
+this script need python 3.11 ++
 
 
 ## Feature
@@ -42,16 +44,10 @@ Install dependencies
   pip3 install -r requirements.txt
 ```
 
-Install rich module
+extract main.zip
 
 ```bash
-  pip3 install rich
-```
-
-Install halo module
-
-```bash
-  pip3 install halo
+  unzip main.zip
 ```
 
 Start the bot
