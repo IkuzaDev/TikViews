@@ -4,7 +4,7 @@ Automation does not require Selenium or any other browser to be interface with Z
 
 ```
 Soon Updated Feature : 
- - Auto bypass UAM cf 🚀
+ - Auto bypass UAM cf ✅
 ```
 
 # Note:
@@ -21,7 +21,7 @@ this script need python 3.11 ++
 | add Followers Service                       | ✅              |
 | Detect status of services                   | ✅              |
 | Google Ads bypassed                         | ✅              |
-| Comments hearts                             | Coming Soon 🚀  |
+| Comments hearts                             | ✅              |
 
 
 ## Run Locally
