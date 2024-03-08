@@ -5,6 +5,10 @@ Automation does not require Selenium or any other browser to be interface with Z
 ```
 Soon Updated Feature : 
  - Auto bypass UAM cf ✅
+
+unfixed BUG:
+ - error while running 
+ - clearing cli on termux
 ```
 
 # Note:
