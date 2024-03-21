@@ -48,12 +48,6 @@ Install dependencies
   pip3 install -r requirements.txt
 ```
 
-extract main.zip
-
-```bash
-  unzip main.zip
-```
-
 Start the bot
 
 ```bash
